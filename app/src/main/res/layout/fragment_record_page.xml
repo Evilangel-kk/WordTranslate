@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.RecordPageFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:paddingTop="50dp"
+            android:paddingBottom="50dp"
+            android:orientation="vertical"
+            android:background="@drawable/text_background">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="全部数量："
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:fontFamily="@string/fontStyle"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/totalNum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="7700"
+                android:textSize="32sp"
+                android:fontFamily="@string/fontStyle"
+                android:textStyle="bold" />
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:paddingTop="50dp"
+            android:paddingBottom="50dp"
+            android:orientation="vertical"
+            android:background="@drawable/text_background">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="今日已学："
+                android:textSize="20sp"
+                android:fontFamily="@string/fontStyle"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/todayNum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="50"
+                android:textSize="32sp"
+                android:fontFamily="@string/fontStyle"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

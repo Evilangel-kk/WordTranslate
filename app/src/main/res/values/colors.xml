@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="themeColor">#c8edcc</color>
+    <color name="themeBackground">#FFFFFFFF</color>
+    <color name="itemTint">#0e932e</color>
+    <color name="itemTextColor">#0e932e</color>
+    <color name="colorPrimary">#008577</color>
+    <color name="editTextStroke">#c8edcc</color>
+    <color name="editTextBg">#fff</color>
+</resources>

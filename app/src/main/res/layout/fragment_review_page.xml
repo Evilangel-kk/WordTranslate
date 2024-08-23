@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.ReviewPageFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="60dp"
+        android:paddingLeft="30dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingRight="30dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical">
+                <TextView
+                    android:id="@+id/theWord"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:text="Word"
+                    android:fontFamily="@string/fontStyle"
+                    android:textSize="48sp"
+                    android:textStyle="bold"/>
+
+                <ImageButton
+                    android:id="@+id/checkBtn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_forget"
+                    android:scaleType="centerInside"
+                    android:background="@drawable/button_shape"/>
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/letterMeaningsListFrag"
+                android:name="com.example.translate.LetterMeaningsListFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Translate</string>
+    <string name="action_settings">Settings</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_total_list">TotalListActivity</string>
+    <string name="title_activity_learn_info">LearnInfoActivity</string>
+    <string name="title_activity_today_list">TodayListActivity</string>
+    <string name="search">search</string>
+    <string name="list">list</string>
+    <string name="record">record</string>
+    <string name="slogan">Keep Learning Everyday</string>
+    <string name="fontStyle">sans-serif-medium</string>
+</resources>
