@@ -27,6 +27,7 @@
                 android:maxLength="20"
                 android:paddingLeft="16dp"
                 android:textSize="16sp"
+                android:singleLine="true"
                 android:fontFamily="@string/fontStyle"
                 android:background="@drawable/no_underline_edittext"
                 android:autofillHints="" />
