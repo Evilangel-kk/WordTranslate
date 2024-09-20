@@ -13,13 +13,32 @@
 1. 下载 APK 文件：请访问 `WordTranslate/app/release/` 文件夹中的 `app-release.apk`。
 2. 安装 APK 文件：在您的 Android 设备上打开 APK 文件进行安装。
 
-## 自定义 API
+## 有道翻译 API
 
-如果您希望使用自己的 API 进行翻译，请按照以下步骤操作：
-
-1. 访问 [YesAPI](http://api.yesapi.net) 申请您的 `api_key`。
-2. 打开 `WordTranslate/app/src/main/java/com/example/translate/DictionaryAPI.kt` 文件。
-3. 将获取到的 `api_key` 替换到相应位置。
+1. 使用有道翻译API https://dict.youdao.com/suggest?num=1&doctype=json&q=`word`。
+2. 直接将word替换为搜索单词即可，无需申请key。
+- 使用示例
+- https://dict.youdao.com/suggest?num=1&doctype=json&q=apple
+- 得到如下结果
+```json
+{
+    "result": {
+        "msg": "success",
+        "code": 200
+    },
+    "data": {
+        "entries": [
+            {
+                "explain": "n. 苹果",
+                "entry": "apple"
+            }
+        ],
+        "query": "apple",
+        "language": "en",
+        "type": "dict"
+    }
+}
+```
 
 ## 反馈和支持
 
