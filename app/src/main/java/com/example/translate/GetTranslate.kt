@@ -42,30 +42,26 @@ object GetTranslate {
 
     fun SearchNet(word: String, dataBaseHelper: MyDataBaseHelper, callback: (result:Int) -> Unit) {
         // 网络api查询
-        val address = "${DictionaryAPI.url}&app_key=${DictionaryAPI.app_key}&sign=${DictionaryAPI.sign}&keyWord=${word}"
+        val address = DictionaryAPI.url+word
         Log.d("address",address)
         HttpUtil.sendHttpRequest(address, object : HttpCallbackListener {
             override fun onFinish(response: String) {
-                val begin = response.indexOf("[")
-                val end = response.lastIndexOf("]")
-                val data = response.substring(begin..end)
-                val jsonArray= JSONArray(data)
-                var explain:String
-                for (i in 0 until jsonArray.length()) {
-                    if(jsonArray.getJSONObject(i).getString("word")==word) {
-                        Letter.changeWord(word)
-                        explain=jsonArray.getJSONObject(i).getString("explain")
-                        Log.d("jsonArray[${i}]", explain)
-                        val result = parseToJson(explain)
-                        val newId=dataBaseHelper.insertDictionaryItem(word)
-                        if(newId.toInt() !=-1){
-                            // 插入成功
-                            for(j in 0 until result.length()){
-                                var meaning=result.getJSONObject(j).getString("partOfSpeech")+". "+result.getJSONObject(j).getString("meanings")
-                                Log.d("meaning", meaning)
-                                dataBaseHelper.insertWord(word,newId,meaning)
-                                Letter.add(meaning)
-                            }
+                val jsonObject = JSONObject(response)
+                Log.d("gettranslate",((""+jsonObject.getJSONObject("data"))=="{}").toString())
+                if((""+jsonObject.getJSONObject("data"))!="{}"){
+                    val entriesArray = jsonObject.getJSONObject("data").getJSONArray("entries")
+                    // 取出第一个 entry 的 explain 值
+                    val explain = entriesArray.getJSONObject(0).getString("explain")
+                    Log.d("gettranslate",explain)
+                    val result = parseToJson(explain)
+                    val newId=dataBaseHelper.insertDictionaryItem(word)
+                    if(newId.toInt() != -1){
+                        // 插入成功
+                        for(j in 0 until result.length()){
+                            var meaning=result.getJSONObject(j).getString("partOfSpeech")+". "+result.getJSONObject(j).getString("meanings")
+                            Log.d("meaning", meaning)
+                            dataBaseHelper.insertWord(word,newId,meaning)
+                            Letter.add(meaning)
                         }
                     }
                 }

@@ -28,8 +28,6 @@ class MainActivity : AppCompatActivity() {
     private val PREFS_NAME = "MyPrefs"
     private val LAST_DATE_KEY = "lastDate"
     private var lastDate: String = ""
-    private val TODAY_RECORD_KEY = "todayRecord"
-    private var todayRecord  = mutableListOf<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

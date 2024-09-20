@@ -28,7 +28,7 @@
                     android:layout_weight="5"
                     android:text="Word"
                     android:fontFamily="@string/fontStyle"
-                    android:textSize="48sp"
+                    android:textSize="36sp"
                     android:textStyle="bold"/>
 
                 <ImageButton
